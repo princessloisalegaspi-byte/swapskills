@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillSwap 💜 | Matchmaking</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function saveUser() {
+      const name = document.getElementById("userName").value.trim();
+      const teach = document.getElementById("skillTeach").value.trim();
+      const learn = document.getElementById("skillLearn").value.trim();
+
+      if (!name || !teach || !learn)
+        return alert("Please fill out all fields 🌸");
+
+      const users = JSON.parse(localStorage.getItem("skills")) || [];
+      users.push({ name, teach, learn });
+      localStorage.setItem("skills", JSON.stringify(users));
+
+      document.getElementById("userName").value = "";
+      document.getElementById("skillTeach").value = "";
+      document.getElementById("skillLearn").value = "";
+
+      alert("You’ve been added! Let’s find your match 💜");
+      displayUsers();
+    }
+
+    function findMatch() {
+      const users = JSON.parse(localStorage.getItem("skills")) || [];
+      const results = [];
+
+      users.forEach((u1) => {
+        users.forEach((u2) => {
+          if (u1.name !== u2.name && u1.teach.toLowerCase() === u2.learn.toLowerCase() && u1.learn.toLowerCase() === u2.teach.toLowerCase()) {
+            results.push(`${u1.name} 💜 ${u2.name} — Perfect Skill Match!`);
+          }
+        });
+      });
+
+      document.getElementById("matchResult").innerHTML =
+        results.length > 0
+          ? results.join("<br>")
+          : "No perfect matches yet 😢 Try adding more users!";
+    }
+
+    function displayUsers() {
+      const users = JSON.parse(localStorage.getItem("skills")) || [];
+      const list = document.getElementById("userList");
+      list.innerHTML = "";
+      users.forEach((u) => {
+        const item = document.createElement("li");
+        item.textContent = `${u.name} — teaches ${u.teach}, wants ${u.learn}`;
+        list.appendChild(item);
+      });
+    }
+
+    function clearData() {
+      localStorage.removeItem("skills");
+      displayUsers();
+      document.getElementById("matchResult").innerHTML = "";
+    }
+
+    window.onload = displayUsers;
+  </script>
+</head>
+<body>
+  <header>
+    <h1>SkillSwap 💜</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="match.html" class="active">Matchmaking</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <section class="page-container">
+    <h3>🤝 Find Your Match</h3>
+    <p>Enter your name and skills below to find your perfect learning buddy 💫</p>
+
+    <input id="userName" class="cute-input" type="text" placeholder="Your Name 💜" />
+    <input id="skillTeach" class="cute-input" type="text" placeholder="Skill You Can Teach 🌸" />
+    <input id="skillLearn" class="cute-input" type="text" placeholder="Skill You Want to Learn 💫" />
+
+    <button class="cute-btn" onclick="saveUser()">Add Me 🌷</button>
+    <button class="cute-btn" onclick="findMatch()">Find Matches 💜</button>
+    <button class="cute-btn" onclick="clearData()">Clear All Data 🧹</button>
+
+    <h4>💞 Match Results:</h4>
+    <p id="matchResult"></p>
+
+    <h4>🌸 All Users:</h4>
+    <ul id="userList"></ul>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 SkillSwap | Made by Group 5 as their Capstone Project 🌷</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/* style.css - SkillSwap (purple & beige cutesy theme) */
+.brand h1{font-family:'Pacifico',cursive;margin:0;font-size:1.6rem}
+.brand .tag{font-size:0.85rem;margin:0.2rem 0 0;opacity:0.95}
+.nav{display:flex;gap:8px}
+.nav-link{color:white;text-decoration:none;padding:8px 12px;border-radius:12px;background:rgba(255,255,255,0.12);font-weight:600}
+.nav-link.active{background:white;color:var(--purple-1)}
+
+
+/* Hero */
+.hero{display:flex;align-items:center;justify-content:space-between;padding:48px 8%;gap:20px}
+.hero-inner{max-width:640px}
+.hero h2{font-family:'Baloo 2',cursive;font-size:2.4rem;margin:0 0 6px}
+.lead{color:rgba(74,20,140,0.9);margin:0 0 14px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-art{font-size:5rem;opacity:0.9}
+.btn{background:var(--purple-1);color:white;padding:10px 18px;border-radius:22px;text-decoration:none;font-weight:700;display:inline-block}
+.btn.ghost{background:transparent;color:var(--purple-2);border:2px solid rgba(106,27,154,0.06)}
+
+
+/* Page container */
+.page-container{max-width:1100px;margin:28px auto;padding:34px;border-radius:18px;background:linear-gradient(180deg,var(--card),#fff);box-shadow:0 6px 30px rgba(80,20,140,0.04)}
+
+
+/* Cards grid */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.card{padding:18px;border-radius:14px;background:linear-gradient(180deg,#fff,#fffaf6);border:1px solid rgba(179,146,227,0.18);box-shadow:0 8px 20px rgba(74,20,140,0.03)}
+.card h4{color:var(--purple-2);margin:0 0 6px}
+
+
+/* Forms & Inputs */
+.form-grid{display:grid;grid-template-columns:1fr;gap:10px;max-width:780px;margin:12px auto}
+.cute-input{padding:12px 14px;border-radius:14px;border:2px solid rgba(200,162,224,0.6);outline:none}
+.cute-input:focus{box-shadow:0 6px 18px rgba(179,146,227,0.15);border-color:var(--accent)}
+
+
+/* Tutorials gallery */
+.tutorial-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:12px}
+.tutorial-card{padding:12px;border-radius:14px;background:linear-gradient(180deg,#fff,#fffaf6);border:1px solid rgba(225,202,255,0.5)}
+.tutorial-card video, .tutorial-card iframe{width:100%;border-radius:10px}
+
+
+/* About */
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.about-card{padding:18px;border-radius:14px;background:linear-gradient(180deg,#fff,#fffaf6);border:1px solid rgba(225,202,255,0.5)}
+.about-card h4{margin:0 0 8px;color:var(--purple-2)}
+
+
+/* Community list */
+.community-item{padding:10px;border-radius:10px;margin:8px 0;background:rgba(196,160,224,0.08);border:1px dashed rgba(179,146,227,0.25)}
+.small{font-size:0.95rem;color:rgba(74,20,140,0.8)}
+
+
+/* Footer */
+.site-footer{text-align:center;padding:20px;background:linear-gradient(90deg,var(--pastel-purple),#efd8ff);color:white;margin-top:28px;border-top-left-radius:12px;border-top-right-radius:12px}
+
+
+/* Floating Chat */
+.floating-chat{position:fixed;right:18px;bottom:18px;background:var(--accent);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:22px;box-shadow:0 8px 24px rgba(74,20,140,0.12);cursor:pointer}
+
+
+/* responsive */
+@media (max-width:860px){
+.hero{flex-direction:column;padding:36px 6%}
+.hero-art{font-size:4rem}
+}
+
+
+
+
+/* small utilities */
+hr{border:none;height:1px;background:rgba(74,20,140,0.04);margin:20px 0}
+
+
+
+
+/* End style.css */

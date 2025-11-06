@@ -1,0 +1,211 @@
+<!-- SkillSwap 💜 Full Website - Cutesy and Elegant Purple & Beige Theme -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillSwap 💜 | Peer-to-Peer Skill Exchange</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&family=Baloo+2:wght@500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* 🌸 GENERAL STYLES */
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff6f0; /* soft beige */
+      color: #4a148c; /* purple */
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #c8a2e0;
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 12px;
+      background-color: rgba(255,255,255,0.2);
+      padding: 8px 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: white;
+      color: #4a148c;
+    }
+
+    /* 🌷 HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to bottom right, #c8a2e0, #efd8ff);
+      color: white;
+      border-radius: 0 0 50px 50px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      font-family: 'Baloo 2', cursive;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .cute-btn {
+      background-color: #d8b7ff;
+      color: #4a148c;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 25px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .cute-btn:hover {
+      background-color: #b388eb;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* 💕 CONTENT SECTION */
+    .page-container {
+      text-align: center;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #fdf5ff;
+      border-radius: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .page-container h3 {
+      font-family: 'Baloo 2', cursive;
+      color: #6a1b9a;
+      margin-bottom: 15px;
+    }
+
+    .page-container p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* 💜 FOOTER */
+    .footer {
+      background-color: #4a148c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* 💬 FLOATING CHAT ICON */
+    .floating-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #b388eb;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      animation: float 3s ease-in-out infinite;
+      transition: transform 0.3s;
+    }
+
+    .floating-icon:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* 🌸 RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav a {
+        display: inline-block;
+        margin: 6px;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SkillSwap 💜</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="match.html">Matchmaking</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to SkillSwap!</h2>
+    <p>Where learning feels like friendship 💕 and every swap brings smiles!</p>
+    <a href="tutorials.html"><button class="cute-btn">Explore Tutorials 🌷</button></a>
+  </section>
+
+  <div class="page-container">
+    <h3>🌸 Share Skills, Make Friends</h3>
+    <p>At SkillSwap, every connection is a chance to learn something cute, fun, and new! Whether it's painting, coding, baking, or dancing — someone special is waiting to share it with you 💜</p>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 SkillSwap | Made with Group 5 as their capstone project</p>
+  </footer>
+
+  <div class="floating-icon" title="Chat with us!">💬</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillSwap 💜 | Tutorials</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function addTutorial() {
+      const url = document.getElementById("videoUrl").value.trim();
+      if (!url) return alert("Please enter a video link 🌸");
+      const list = document.getElementById("tutorialList");
+      const div = document.createElement("div");
+      div.className = "video-card";
+      div.innerHTML = `
+        <iframe src="${url.replace("watch?v=", "embed/")}" frameborder="0" allowfullscreen></iframe>
+      `;
+      list.appendChild(div);
+      document.getElementById("videoUrl").value = "";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>SkillSwap 💜</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="tutorials.html" class="active">Tutorials</a>
+      <a href="match.html">Matchmaking</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <section class="page-container">
+    <h3>🎥 Tutorials</h3>
+    <p>Watch and share skill tutorials! Paste a YouTube video link to add it below 🌸</p>
+
+    <input id="videoUrl" class="cute-input" type="text" placeholder="Paste YouTube link here 💜" />
+    <button class="cute-btn" onclick="addTutorial()">Add Tutorial 🌷</button>
+
+    <div id="tutorialList" class="video-list"></div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 SkillSwap | Made by Group 5 as their Capstone Project 🌷</p>
+  </footer>
+</body>
+</html>
